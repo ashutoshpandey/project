@@ -27,5 +27,7 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::get('/login', 'StaticController@login');
+    Route::post('/auth/check-login', 'Auth\AuthController@checkLogin');
+    Route::get('/logout', 'Auth\AuthController@logout');
 });
